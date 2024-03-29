@@ -21,7 +21,7 @@ import { XIcon } from "@/components/icons/XIcon";
 
 export const RESUME_DATA = {
   name: "Nguyen Van Qui",
-  initials: "BJ",
+  initials: "VQ",
   location: "Ho Chi Minh City, Vietnam",
   locationLink:
     "https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam/@10.7552929,106.3655699,10z/data=!3m1!4b1!4m6!3m5!1s0x317529292e8d3dd1:0xf15f5aad773c112b!8m2!3d10.8230989!4d106.6296638!16zL20vMGhuNGg?authuser=0&entry=ttu",
