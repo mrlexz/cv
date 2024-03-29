@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import ReactHtmlParser from "react-html-parser";
+import { Loading } from "@/components/ui/loading";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -90,7 +91,9 @@ export default function Page() {
 
           <Avatar className="h-28 w-28">
             <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+            <AvatarFallback>
+              <Loading />
+            </AvatarFallback>
           </Avatar>
         </div>
         <Section>
@@ -133,7 +136,6 @@ export default function Page() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  {/* {work.description} */}
                   <div>{ReactHtmlParser(work.description)}</div>
                 </CardContent>
               </Card>
