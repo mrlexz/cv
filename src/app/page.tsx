@@ -10,6 +10,8 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import ReactHtmlParser from "react-html-parser";
 import { Loading } from "@/components/ui/loading";
+import { MovieIcon } from "@/components/icons/MovieIcon";
+import { MovieBubble } from "@/components/movie-bubble";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -74,6 +76,16 @@ export default function Page() {
                   </a>
                 </Button>
               ))}
+              <Button
+                  className="h-8 w-8"
+                  variant="outline"
+                  size="icon"
+                  asChild
+                >
+                  <a href="">
+                    <MovieIcon />
+                  </a>
+                </Button>
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
               {RESUME_DATA.contact.email ? (
@@ -201,6 +213,8 @@ export default function Page() {
           })),
         ]}
       />
+
+      <MovieBubble href="https://space-movie.vercel.app/" />
     </main>
   );
 }
