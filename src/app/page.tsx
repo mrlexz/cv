@@ -76,16 +76,11 @@ export default function Page() {
                   </a>
                 </Button>
               ))}
-              <Button
-                  className="h-8 w-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href="">
-                    <MovieIcon />
-                  </a>
-                </Button>
+              <Button className="h-8 w-8" variant="outline" size="icon" asChild>
+                <a href="">
+                  <MovieIcon />
+                </a>
+              </Button>
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
               {RESUME_DATA.contact.email ? (
@@ -148,7 +143,7 @@ export default function Page() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  <div>{ReactHtmlParser(work.description)}</div>
+                  <div>{ReactHtmlParser(work.description || "")}</div>
                 </CardContent>
               </Card>
             );
