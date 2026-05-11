@@ -8,7 +8,7 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { Loading } from "@/components/ui/loading";
 import { MovieIcon } from "@/components/icons/MovieIcon";
 import { MovieBubble } from "@/components/movie-bubble";
@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
   description: RESUME_DATA.summary,
 };
+
+const MOVIE_URL = "https://space-movie.vercel.app/"
 
 export default function Page() {
   return (
@@ -77,7 +79,7 @@ export default function Page() {
                 </Button>
               ))}
               <Button className="h-8 w-8" variant="outline" size="icon" asChild>
-                <a href="">
+                <a href={MOVIE_URL} target="_blank">
                   <MovieIcon />
                 </a>
               </Button>
@@ -143,7 +145,7 @@ export default function Page() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  <div>{ReactHtmlParser(work.description || "")}</div>
+                  <div>{parse(work.description || "")}</div>{" "}
                 </CardContent>
               </Card>
             );
@@ -209,7 +211,7 @@ export default function Page() {
         ]}
       />
 
-      <MovieBubble href="https://space-movie.vercel.app/" />
+      <MovieBubble href={MOVIE_URL} />
     </main>
   );
 }
